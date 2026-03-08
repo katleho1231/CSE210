@@ -1,9 +1,30 @@
-using System;
+﻿using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello World! This is the Exercise1 Project.");
+        Console.Write("Enter a number: ");
+        string? input = Console.ReadLine();
+        int number;
+
+        if (!int.TryParse(input, out number))
+        {
+            Console.WriteLine("Invalid input! Exiting...");
+            return;
+        }
+
+        if (number > 0)
+        {
+            Console.WriteLine("Positive number");
+        }
+        else if (number < 0)
+        {
+            Console.WriteLine("Negative number");
+        }
+        else
+        {
+            Console.WriteLine("Zero");
+        }
     }
 }

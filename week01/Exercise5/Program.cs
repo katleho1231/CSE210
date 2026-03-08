@@ -2,8 +2,24 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello World! This is the Exercise5 Project.");
+        Console.Write("Enter a number: ");
+        string? input = Console.ReadLine();
+        int number;
+
+        if (!int.TryParse(input, out number))
+        {
+            Console.WriteLine("Invalid input! Exiting...");
+            return;
+        }
+
+        int squared = Square(number);
+        Console.WriteLine($"The square of {number} is {squared}");
+    }
+
+    static int Square(int x)
+    {
+        return x * x;
     }
 }
